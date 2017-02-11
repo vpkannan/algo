@@ -3,6 +3,9 @@ package vig.algo.ds.tree;
 /**
  * @author Vignesh
  *
+ *         Basic Binary Tree which accepts any type of data. Any node in a
+ *         binary tree has two children nodes - left and right.
+ * 
  */
 public class BinaryTree<T> {
 
