@@ -24,6 +24,16 @@ public class LinkedList<T> {
 		this.next = next;
 	}
 
+	/**
+	 * Inserts a new node next to the current node
+	 * 
+	 * @param item
+	 *            The object to be inserted
+	 */
+	public void insertAfter(T item) {
+		this.next = new LinkedList<>(item, this.next);
+	}
+
 	public LinkedList(T item) {
 		this(item, null);
 	}
