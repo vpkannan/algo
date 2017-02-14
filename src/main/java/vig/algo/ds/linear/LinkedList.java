@@ -13,10 +13,23 @@ package vig.algo.ds.linear;
  */
 public class LinkedList<T> {
 	private Node<T> head;
+	private int size;
 
 	public LinkedList() {
 		super();
 		this.head = null;
+		size = 0;
+	}
+
+	/**
+	 * Inserts a node to the beginning of the list
+	 * 
+	 * @param item
+	 *            The item to be inserted
+	 */
+	public void insertFirst(T item) {
+		this.head = new Node<T>(item, head);
+		size++;
 	}
 
 	public LinkedList(Node<T> node) {
@@ -29,6 +42,10 @@ public class LinkedList<T> {
 
 	public void setHead(Node<T> head) {
 		this.head = head;
+	}
+
+	public int getSize() {
+		return size;
 	}
 
 }
