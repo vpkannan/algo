@@ -18,10 +18,14 @@ public class LinkedList<T> {
 		this.next = null;
 	}
 
-	public LinkedList(T item) {
+	public LinkedList(T item, LinkedList<T> next) {
 		super();
 		this.item = item;
-		this.next = null;
+		this.next = next;
+	}
+
+	public LinkedList(T item) {
+		this(item, null);
 	}
 
 	public T getItem() {
