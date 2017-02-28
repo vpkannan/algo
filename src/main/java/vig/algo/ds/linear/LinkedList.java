@@ -12,7 +12,7 @@ package vig.algo.ds.linear;
  *            Represents a generic data type
  */
 public class LinkedList<T> {
-	private Node<T> head;
+	private SNode<T> head;
 	private int size;
 
 	public LinkedList() {
@@ -21,7 +21,7 @@ public class LinkedList<T> {
 		size = 0;
 	}
 
-	public LinkedList(Node<T> node) {
+	public LinkedList(SNode<T> node) {
 		this.head = node;
 		size++;
 	}
@@ -33,8 +33,8 @@ public class LinkedList<T> {
 	 *            The node to be inserted
 	 * @return The new head of the list
 	 */
-	public Node<T> insertFirst(T item) {
-		this.head = new Node<T>(item, head);
+	public SNode<T> insertFirst(T item) {
+		this.head = new SNode<T>(item, head);
 		size++;
 		return this.head;
 	}
@@ -45,17 +45,17 @@ public class LinkedList<T> {
 	 * @return The new head of the list
 	 * 
 	 */
-	public Node<T> deleteFirstNode() {
+	public SNode<T> deleteFirstNode() {
 		this.head = this.head.getNext();
 		size--;
 		return this.head;
 	}
 
-	public Node<T> getHead() {
+	public SNode<T> getHead() {
 		return head;
 	}
 
-	public void setHead(Node<T> head) {
+	public void setHead(SNode<T> head) {
 		this.head = head;
 	}
 
@@ -73,17 +73,17 @@ public class LinkedList<T> {
  * @param <T>
  *            A generic data type for the node
  */
-class Node<T> {
+class SNode<T> {
 
 	private T item;
-	private Node<T> next;
+	private SNode<T> next;
 
-	public Node() {
+	public SNode() {
 		super();
 		this.next = null;
 	}
 
-	public Node(T item, Node<T> next) {
+	public SNode(T item, SNode<T> next) {
 		super();
 		this.item = item;
 		this.next = next;
@@ -96,10 +96,10 @@ class Node<T> {
 	 *            The object to be inserted
 	 */
 	public void insertAfter(T item) {
-		this.next = new Node<>(item, this.next);
+		this.next = new SNode<>(item, this.next);
 	}
 
-	public Node(T item) {
+	public SNode(T item) {
 		this(item, null);
 	}
 
@@ -111,11 +111,11 @@ class Node<T> {
 		this.item = item;
 	}
 
-	public Node<T> getNext() {
+	public SNode<T> getNext() {
 		return next;
 	}
 
-	public void setNext(Node<T> next) {
+	public void setNext(SNode<T> next) {
 		this.next = next;
 	}
 
