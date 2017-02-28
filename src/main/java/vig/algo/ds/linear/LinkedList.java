@@ -21,6 +21,11 @@ public class LinkedList<T> {
 		size = 0;
 	}
 
+	public LinkedList(Node<T> node) {
+		this.head = node;
+		size++;
+	}
+
 	/**
 	 * Inserts a node to the beginning of the list
 	 * 
@@ -30,10 +35,6 @@ public class LinkedList<T> {
 	public void insertFirst(T item) {
 		this.head = new Node<T>(item, head);
 		size++;
-	}
-
-	public LinkedList(Node<T> node) {
-		this.head = node;
 	}
 
 	public Node<T> getHead() {
