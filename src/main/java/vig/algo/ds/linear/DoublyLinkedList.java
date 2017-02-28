@@ -12,14 +12,17 @@ package vig.algo.ds.linear;
 public class DoublyLinkedList<T> {
 
 	private DNode<T> head;
+	private DNode<T> tail;
 	private int size;
 
 	public DoublyLinkedList() {
 		this.head = null;
+		this.tail = null;
 	}
 
 	public DoublyLinkedList(DNode<T> item) {
 		this.head = item;
+		this.tail = item;
 		this.size++;
 	}
 
@@ -29,6 +32,14 @@ public class DoublyLinkedList<T> {
 
 	public void setHead(DNode<T> head) {
 		this.head = head;
+	}
+
+	public DNode<T> getTail() {
+		return tail;
+	}
+
+	public void setTail(DNode<T> tail) {
+		this.tail = tail;
 	}
 
 	public int getSize() {
