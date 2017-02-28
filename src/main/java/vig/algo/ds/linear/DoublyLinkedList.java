@@ -26,6 +26,30 @@ public class DoublyLinkedList<T> {
 		this.size++;
 	}
 
+	/**
+	 * Delete the tail of the doubly linked list
+	 * 
+	 * @return true if the node was deleted false if node cannot be deleted, or
+	 *         if list is empty
+	 */
+	public boolean deleteTail() {
+		if (this.size == 0) {
+			/* List has no nodes */
+			return false;
+		} else if (this.size == 1) {
+			/* List has one node */
+			this.head = null;
+			this.tail = null;
+			this.size--;
+			return true;
+		} else {
+			/* List has more than one nodes */
+			this.tail.getPrevious().setNext(null);
+			this.tail = this.tail.getPrevious();
+			return true;
+		}
+	}
+
 	public DNode<T> getHead() {
 		return head;
 	}
