@@ -4,10 +4,40 @@
 package vig.algo.ds.linear;
 
 /**
+ * Represents a doubly linked list
+ * 
  * @author Vignesh
  *
  */
-public class DoublyLinkedList {
+public class DoublyLinkedList<T> {
+
+	private DNode<T> head;
+	private int size;
+
+	public DoublyLinkedList() {
+		this.head = null;
+	}
+
+	public DoublyLinkedList(DNode<T> item) {
+		this.head = item;
+		this.size++;
+	}
+
+	public DNode<T> getHead() {
+		return head;
+	}
+
+	public void setHead(DNode<T> head) {
+		this.head = head;
+	}
+
+	public int getSize() {
+		return size;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
 
 }
 

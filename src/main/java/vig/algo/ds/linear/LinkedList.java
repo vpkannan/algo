@@ -18,7 +18,6 @@ public class LinkedList<T> {
 	public LinkedList() {
 		super();
 		this.head = null;
-		size = 0;
 	}
 
 	public LinkedList(SNode<T> node) {
