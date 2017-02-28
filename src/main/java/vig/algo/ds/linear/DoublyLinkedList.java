@@ -12,18 +12,22 @@ package vig.algo.ds.linear;
 public class DoublyLinkedList<T> {
 
 	private DNode<T> head;
-	private DNode<T> tail;
 	private int size;
 
 	public DoublyLinkedList() {
-		this.head = null;
-		this.tail = null;
+		super();
+		this.head = new DNode<T>();
+		this.head.setItem(null);
+		this.head.setNext(this.head);
+		this.head.setPrevious(this.head);
 	}
 
 	public DoublyLinkedList(DNode<T> item) {
-		this.head = item;
-		this.tail = item;
-		this.size++;
+		this.head = new DNode<T>();
+		this.head.setItem(null);
+		this.head.setNext(item);
+		this.head.setPrevious(item);
+		this.size = 1;
 	}
 
 	/**
@@ -37,16 +41,18 @@ public class DoublyLinkedList<T> {
 			/* List has no nodes */
 			return false;
 		} else if (this.size == 1) {
-			/* List has one node */
-			this.head = null;
-			this.tail = null;
-			this.size--;
+			/* List has only one node */
+			this.head.setNext(this.head.getNext().getPrevious());
+			this.head.setPrevious(this.head.getPrevious().getNext());
+			this.size = 0;
 			return true;
 		} else {
-			/* List has more than one nodes */
-			this.tail.getPrevious().setNext(null);
-			this.tail = this.tail.getPrevious();
+			/* If the list has more than one node */
+			this.head.getPrevious().getPrevious().setNext(this.head);
+			this.head.setPrevious(this.head.getPrevious().getPrevious());
+			this.size--;
 			return true;
+
 		}
 	}
 
@@ -56,14 +62,6 @@ public class DoublyLinkedList<T> {
 
 	public void setHead(DNode<T> head) {
 		this.head = head;
-	}
-
-	public DNode<T> getTail() {
-		return tail;
-	}
-
-	public void setTail(DNode<T> tail) {
-		this.tail = tail;
 	}
 
 	public int getSize() {

@@ -17,7 +17,6 @@ public class LinkedList<T> {
 
 	public LinkedList() {
 		super();
-		this.head = null;
 	}
 
 	public LinkedList(SNode<T> node) {
