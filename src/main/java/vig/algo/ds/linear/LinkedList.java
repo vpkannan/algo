@@ -32,9 +32,16 @@ public class LinkedList<T> {
 	 * @param item
 	 *            The item to be inserted
 	 */
-	public void insertFirst(T item) {
+	public Node<T> insertFirst(T item) {
 		this.head = new Node<T>(item, head);
 		size++;
+		return this.head;
+	}
+
+	public Node<T> deleteFirstNode() {
+		this.head = this.head.getNext();
+		size--;
+		return this.head;
 	}
 
 	public Node<T> getHead() {
