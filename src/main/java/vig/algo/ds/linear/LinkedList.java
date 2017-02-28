@@ -27,10 +27,11 @@ public class LinkedList<T> {
 	}
 
 	/**
-	 * Inserts a node to the beginning of the list
+	 * Inserts a node at the beginning of the list
 	 * 
 	 * @param item
-	 *            The item to be inserted
+	 *            The node to be inserted
+	 * @return The new head of the list
 	 */
 	public Node<T> insertFirst(T item) {
 		this.head = new Node<T>(item, head);
@@ -38,6 +39,12 @@ public class LinkedList<T> {
 		return this.head;
 	}
 
+	/**
+	 * Deletes the first node of the list
+	 * 
+	 * @return The new head of the list
+	 * 
+	 */
 	public Node<T> deleteFirstNode() {
 		this.head = this.head.getNext();
 		size--;
