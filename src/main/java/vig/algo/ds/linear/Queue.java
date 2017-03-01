@@ -6,6 +6,7 @@ package vig.algo.ds.linear;
 import java.lang.reflect.Array;
 
 /**
+ * Represents a queue data structure
  * @author Vignesh
  *
  */
