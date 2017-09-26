@@ -3,6 +3,7 @@ import java.util.*;
 
 class NthRoot {
 
+  /* Function to find nth root of a number */
   static double root(double x, int n) {
       double lowerBound = 0;
       double upperBound = (1 > x) ? 1 : x;
